@@ -13,11 +13,6 @@ import java.util.Date;
 public interface RoomReservationRepository
        extends JpaRepository<RoomReservation, Long>, JpaSpecificationExecutor<RoomReservation>
 {
-    //nazwa metody jest jednocześnie zapytaniem
-    //Page<RoomReservation> findByNameContaining(String phrase, Pageable pageable);
-
-    //nad klasą Vehicle znajduje się definicja zapytania (@NamedQuery) powiązana z tą metodą
-  //  Page<RoomReservation> findAllRoomReservationsUsingNamedQuery(String phrase, Pageable pageable);
 
     @Query("SELECT v FROM RoomReservation v WHERE " +
             "(" +

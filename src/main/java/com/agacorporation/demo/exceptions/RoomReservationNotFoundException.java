@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class RoomReservationNotFoundException extends RuntimeException{
 
     public RoomReservationNotFoundException(){
-        super(String.format("Rezerwacja nie istnieje"));
+        super(String.format("Бронирование не существует"));
     }
 
     public RoomReservationNotFoundException(Long id){
-        super(String.format("Rezerwacja o id %d nie istnieje", id));
+        super(String.format("Бронирование id%d не существует", id));
     }
 }

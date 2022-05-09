@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class RoomNotFoundException extends RuntimeException{
 
     public RoomNotFoundException(){
-        super(String.format("Pokoj nie istnieje"));
+        super(String.format("Номер не существует"));
     }
 
     public RoomNotFoundException(Long id){
-        super(String.format("Pokoj o id %d nie istnieje", id));
+        super(String.format("Номер с id %d не существует", id));
     }
 }

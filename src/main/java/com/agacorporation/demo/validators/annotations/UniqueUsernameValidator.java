@@ -16,7 +16,6 @@ public class UniqueUsernameValidator implements ConstraintValidator<UniqueUserna
     }
 
     public boolean isValid(String login, ConstraintValidatorContext context) {
-        //w trakcie uruchamiania RepositoryInitializer usługi userService jeszcze nie ma wstrzykniętej do tego walidatora dlatego userService == null.
         return userService == null || (login != null && userService.isUniqueLogin(login));
     }
 

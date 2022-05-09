@@ -42,7 +42,6 @@ public class RoomReservationFormController {
     @Autowired
     UserService userService;
 
-    //Wstrzyknięcie zależności przez konstruktor. Od wersji 4.3 Springa nie trzeba używać adnontacji @Autowired, gdy mamy jeden konstruktor
     @Autowired
     public RoomReservationFormController(RoomReservationService roomReservationService)
     {
