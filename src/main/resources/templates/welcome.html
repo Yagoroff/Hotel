@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Hotel</title>
+    <div th:replace="shared/header :: header-css"/>
+</head>
+<body
+
+    <div th:replace="shared/header :: header('welcome')"/>
+
+    <div class="container-fluid text-center" >
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <p></p>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <a class="btn btn-dark" href="/addUser">Добавить пользователя</a>
+                </div>
+                <br>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <a class="btn btn-dark" href="reservationFormADM.html">Добавить бронирование</a>
+                </div>
+
+                <div sec:authorize="hasRole('USER')">
+                    <a class="btn btn-dark" href="reservationFormUSR.html">Забронировать номер</a>
+
+                </div>
+<!--
+                <div sec:authorize="isAuthenticated()">
+
+                    Twoje role to:
+                    <span th:each="role: ${#authentication.getAuthorities()}">
+                            <span th:text="${role}"/>
+                        </span>
+                </div>
+-->
+            </div>
+            <div class="col-sm-8 text-left">
+
+                <section>
+                    <!--Section heading-->
+                    <h2 class="h1-responsive font-weight-bold text-center my-5" style="font-family: 'Inria Serif', serif; color: #112D4E">Отель Элеон</h2>
+                    <!--Grid row-->
+                    <div class="row mx-1">
+
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-4">
+                            <div class="card card-image" style="background-image: url('https://downloader.disk.yandex.ru/preview/e3b54eebca584a05e18a3bcdc7724c9a862486b9668e03bcae6b35eb652aa4c9/627810e3/C4K2PnysbZKAtgbidUzTlO0q491WfCQ54Vb6QlFzwHoMnpFP9UcKMmfb5yzIFfzJ9cnywULoiVXGTk4HmUErOQ%3D%3D?uid=0&filename=1.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'); background-size: 100%; border-radius: 20px">
+                                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                    <div>
+                                        <br>
+                                         <h2 class="card-title py-3 font-weight-bold" style="color:#112D4E;"><strong>Элеон</strong></h2>
+                                        <br>
+                                        <p class="pb-3" style="color:#3F72AF;"> Остановитесь у нас, в <span style="font-family: 'Inria Serif', serif" >Отеле Элеон</span>
+                                            Элегантность, роскошный и современный дизайн, а также многочисленные удобства для гостей - вот лишь некоторые из преимуществ нашего уникального отеля</p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+<br><br>
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4">
+                            <div class="card card-image" style="background-image: url('https://downloader.disk.yandex.ru/preview/64ffa1b4e105d404c519bebb130e673f18f0f4146c02b465ed0957261b723d0e/627810ff/V_3I073iV7DQJzqkBjheZ_5h25-vM3d5HalU_nl2kJhl84HBDeen7lI8KBIM1Zc_51sN_P-XPoXWw9cp5kYh_g%3D%3D?uid=0&filename=2.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'); background-size: 100%; border-radius: 20px">
+                                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                    <div>
+                                        <br>
+                                        <h3 class="card-title py-3 font-weight-bold" style="color:#112D4E;"><strong>Ресторан</strong></h3>
+                                        <br>
+                                        <p class="pb-3" style="color:#3F72AF;">Это не только отель, но и ресторан, известный своей вкусной кухней и крутым Шеф-поваром. Также наш ресторан обладает Звездой Мишлен.</p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4">
+                            <div class="card card-image" style="background-image: url('https://downloader.disk.yandex.ru/preview/9afdd5b888def2e618fb7e008a995868db95a1a690e910fa978d07e3c404a162/6278110d/Uf9-kMUA7WLUz4OtxBjPiv5h25-vM3d5HalU_nl2kJh8mL1EFJnpfhJ94MRYHN3l8ZFzTlXe9D965z9kYLKhBA%3D%3D?uid=0&filename=3.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048');background-size: 100% 100%; background-repeat: no-repeat;  border-radius: 20px">
+                                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                    <div>
+                                        <br>
+                                        <h3 class="card-title py-3 font-weight-bold" style="color:#112D4E;"><strong>Шеф в номер</strong></h3>
+
+                                        <br>
+                                        <p class="pb-3" style="color:#3F72AF;">В нашем отеле действует услуга Шеф в номер. Вы сможете понаблюдать за работой нашего великолепного Шеф-повара не прерывая вашего отдыха</p>
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                </section>
+
+
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <label style="color:#112D4E; margin-top: 20px;" sec:authorize="isAuthenticated()">
+                        Здравствуйте, <span sec:authentication="name"/>!
+                    </label>
+                </div>
+                <div class="well">
+                    <a sec:authorize="isAuthenticated()" class="btn btn-dark" href="accountDetails.html">Ваша учетная запись</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
