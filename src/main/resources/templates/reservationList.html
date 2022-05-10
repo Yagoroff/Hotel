@@ -118,7 +118,7 @@
 </span>
                         <span th:if="${roomReservation.reservationEndDate.before(#dates.createNow())}">
 <a class="btn btn-danger" sec:authorize="isAuthenticated()"
-   th:href="@{/reservationList.html(id=${roomReservation.id})}">Usuń </a>
+   th:href="@{/reservationList.html(id=${roomReservation.id})}">Удалить </a>
 <p>Бронирование неактуально</p>
 </span>
                         <span th:if="${roomReservation.reservationEndDate.after(#dates.createNow()) and roomReservation.reservationStartDate.before(#dates.createNow())}">
